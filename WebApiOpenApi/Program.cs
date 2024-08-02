@@ -10,15 +10,15 @@ builder.Services.AddControllers();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
    .AddJwtBearer("Bearer", options =>
    {
-       options.Audience = "rs_scope_bApi";
+       options.Audience = "api_scope";
        options.Authority = "https://localhost:44367";
        options.TokenValidationParameters = new TokenValidationParameters
        {
            ValidateIssuer = true,
            ValidateAudience = true,
            ValidateIssuerSigningKey = true,
-           ValidAudiences = new List<string> { "rs_scope_bApi" },
-           ValidIssuers = new List<string> { "https://localhost:44367" },
+           ValidAudiences = ["api_scope"],
+           ValidIssuers = ["https://localhost:44367"],
        };
    });
 
@@ -40,9 +40,7 @@ builder.Services.AddOpenApi(options =>
 var app = builder.Build();
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 //app.MapOpenApi(); // /openapi/v1.json
