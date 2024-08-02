@@ -26,6 +26,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+//app.MapOpenApi(); // /openapi/v1.json
 app.MapOpenApi("/openapi/v1/openapi.json");
 //app.MapOpenApi("/openapi/{documentName}/openapi.json");
 
