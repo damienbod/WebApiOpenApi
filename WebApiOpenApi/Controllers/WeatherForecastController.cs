@@ -32,7 +32,6 @@ public class WeatherForecastController(ILogger<WeatherForecastController> _logge
         .ToArray());
     }
 
-
     [EndpointSummary("This is a second summary from OpenApi attributes.")]
     [EndpointDescription("This is a second description from OpenApi attributes.")]
     [Produces(typeof(IEnumerable<WeatherForecast>))]

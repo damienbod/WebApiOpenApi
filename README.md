@@ -4,6 +4,10 @@
 Install-Package Microsoft.AspNetCore.OpenApi -IncludePrerelease
 ´´´
 
+## Example of OpenAPI with minimal APIs
+
+https://github.com/martincostello/dotnet-minimal-api-integration-testing
+
 ## Links
 
 https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/aspnetcore-openapi
