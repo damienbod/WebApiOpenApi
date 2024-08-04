@@ -1,8 +1,8 @@
 # Web API OpenApi
 
-´´´
+```
 Install-Package Microsoft.AspNetCore.OpenApi -IncludePrerelease
-´´´
+```
 
 ## Example of OpenAPI with minimal APIs
 
