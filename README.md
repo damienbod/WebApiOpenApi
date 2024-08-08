@@ -20,3 +20,5 @@ https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet9/nuget/v3/index.json
 
 https://github.com/RicoSuter/NSwag
 
+https://damienbod.com/2021/08/30/improving-application-security-in-an-asp-net-core-api-using-http-headers-part-3/
+
