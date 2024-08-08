@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using WebApiOpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +41,14 @@ builder.Services.AddOpenApi(options =>
 
 var app = builder.Build();
 
+// Open up security restrictions to allow this to work
+// Not recommended in production
+//var deploySwaggerUI = app.Environment.IsDevelopment();
+var deploySwaggerUI = app.Configuration.GetValue<bool>("DeploySwaggerUI");
+
+app.UseSecurityHeaders(
+    SecurityHeadersDefinitions.GetHeaderPolicyCollection(deploySwaggerUI));
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
@@ -48,7 +57,7 @@ app.MapControllers();
 app.MapOpenApi("/openapi/v1/openapi.json");
 //app.MapOpenApi("/openapi/{documentName}/openapi.json");
 
-if (app.Environment.IsDevelopment())
+if (deploySwaggerUI)
 {
     app.UseSwaggerUI(options =>
     {
