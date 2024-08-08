@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
    .AddJwtBearer("Bearer", options =>
    {
@@ -46,6 +47,14 @@ app.MapControllers();
 //app.MapOpenApi(); // /openapi/v1.json
 app.MapOpenApi("/openapi/v1/openapi.json");
 //app.MapOpenApi("/openapi/{documentName}/openapi.json");
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/openapi/v1/openapi.json", "v1");
+    });
+}
 
 app.Run();
 
