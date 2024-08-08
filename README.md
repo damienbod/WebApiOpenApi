@@ -1,6 +1,9 @@
 # Web API OpenApi
 
-Blog: https://damienbod.com/2024/08/06/implementing-an-asp-net-core-api-with-net-9-and-openapi/
+Blogs: 
+
+https://damienbod.com/2024/08/06/implementing-an-asp-net-core-api-with-net-9-and-openapi/
+
 
 ```
 Install-Package Microsoft.AspNetCore.OpenApi -IncludePrerelease
