@@ -1,4 +1,4 @@
-# ASP.NET COre API using OpenAPI
+# ASP.NET Core API using OpenAPI
 
 Blogs: 
 
