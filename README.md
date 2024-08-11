@@ -1,4 +1,4 @@
-# Web API OpenApi
+# ASP.NET COre API using OpenAPI
 
 Blogs: 
 
@@ -25,3 +25,4 @@ https://github.com/RicoSuter/NSwag
 
 https://damienbod.com/2021/08/30/improving-application-security-in-an-asp-net-core-api-using-http-headers-part-3/
 
+https://swagger.io/
