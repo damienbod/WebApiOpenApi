@@ -4,6 +4,9 @@ Blogs:
 
 https://damienbod.com/2024/08/06/implementing-an-asp-net-core-api-with-net-9-and-openapi/
 
+https://damienbod.com/2024/08/12/add-a-swagger-ui-using-a-net-9-json-openapi-file/
+
+### Nuget package for OpenAPI
 
 ```
 Install-Package Microsoft.AspNetCore.OpenApi -IncludePrerelease
