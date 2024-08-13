@@ -31,3 +31,5 @@ https://damienbod.com/2021/08/30/improving-application-security-in-an-asp-net-co
 https://swagger.io/
 
 https://swagger.io/specification/
+
+https://github.com/mikekistler/aspnet-openapi-examples
