@@ -32,4 +32,6 @@ https://swagger.io/
 
 https://swagger.io/specification/
 
+https://github.com/martincostello/aspnetcore-openapi
+
 https://github.com/mikekistler/aspnet-openapi-examples
