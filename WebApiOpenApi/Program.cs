@@ -36,7 +36,7 @@ builder.Services.AddOpenApi(options =>
     //    };
     //    return Task.CompletedTask;
     //});
-    options.UseTransformer<BearerSecuritySchemeTransformer>();
+    options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
 });
 
 var app = builder.Build();
