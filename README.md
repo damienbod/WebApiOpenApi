@@ -12,6 +12,10 @@ https://damienbod.com/2024/08/12/add-a-swagger-ui-using-a-net-9-json-openapi-fil
 Install-Package Microsoft.AspNetCore.OpenApi -IncludePrerelease
 ```
 
+## History
+
+2024-08-13 Updated to .NET 9 Preview 7
+
 ## Example of OpenAPI with minimal APIs
 
 https://github.com/martincostello/dotnet-minimal-api-integration-testing
