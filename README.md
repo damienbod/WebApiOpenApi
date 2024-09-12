@@ -14,7 +14,8 @@ Install-Package Microsoft.AspNetCore.OpenApi -IncludePrerelease
 
 ## History
 
-2024-08-13 Updated to .NET 9 Preview 7
+- 2024-09-12 Updated to .NET 9 RC1
+- 2024-08-13 Updated to .NET 9 Preview 7
 
 ## Example of OpenAPI with minimal APIs
 
