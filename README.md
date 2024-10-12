@@ -14,6 +14,7 @@ Install-Package Microsoft.AspNetCore.OpenApi -IncludePrerelease
 
 ## History
 
+- 2024-10-12 Updated to .NET 9 RC2
 - 2024-09-12 Updated to .NET 9 RC1
 - 2024-08-13 Updated to .NET 9 Preview 7
 
