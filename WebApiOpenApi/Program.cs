@@ -3,9 +3,21 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using NetEscapades.AspNetCore.SecurityHeaders.Infrastructure;
 using WebApiOpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Open up security restrictions to allow this to work
+// Not recommended in production
+//var deploySwaggerUI = app.Environment.IsDevelopment();
+var deploySwaggerUI = builder.Configuration.GetValue<bool>("DeploySwaggerUI");
+
+builder.Services.AddSecurityHeaderPolicies()
+    .SetPolicySelector((PolicySelectorContext ctx) =>
+    {
+        return SecurityHeadersDefinitions.GetHeaderPolicyCollection(deploySwaggerUI);
+    });
 
 builder.Services.AddControllers();
 
@@ -41,13 +53,7 @@ builder.Services.AddOpenApi(options =>
 
 var app = builder.Build();
 
-// Open up security restrictions to allow this to work
-// Not recommended in production
-//var deploySwaggerUI = app.Environment.IsDevelopment();
-var deploySwaggerUI = app.Configuration.GetValue<bool>("DeploySwaggerUI");
-
-app.UseSecurityHeaders(
-    SecurityHeadersDefinitions.GetHeaderPolicyCollection(deploySwaggerUI));
+app.UseSecurityHeaders();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
