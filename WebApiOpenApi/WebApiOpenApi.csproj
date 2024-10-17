@@ -14,7 +14,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="NetEscapades.AspNetCore.SecurityHeaders" Version="1.0.0-preview.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.8.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.9.0" />
   </ItemGroup>
 
 </Project>
