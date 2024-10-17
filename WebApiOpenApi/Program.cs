@@ -34,7 +34,6 @@ builder.Services.AddSecurityHeaderPolicies()
             // Strict security for production
             return SecurityHeadersDefinitionsAPI.GetHeaderPolicyCollection(isDev);
         }
-       
     });
 
 builder.Services.AddControllers();
