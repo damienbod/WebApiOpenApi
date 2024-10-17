@@ -18,14 +18,13 @@ public static class SecurityHeadersDefinitionsSwagger
         {
             builder.AddObjectSrc().None();
             builder.AddBlockAllMixedContent();
-            builder.AddImgSrc().None();
-            builder.AddFormAction().None();
-            builder.AddFontSrc().None();
-            builder.AddStyleSrc().None();
-            builder.AddScriptSrc().None();
+            builder.AddImgSrc().Self().From("data:");
+            builder.AddFormAction().Self();
+            builder.AddFontSrc().Self();
+            builder.AddStyleSrc().Self().UnsafeInline();
+            builder.AddScriptSrc().Self().UnsafeInline(); //.WithNonce();
             builder.AddBaseUri().Self();
             builder.AddFrameAncestors().None();
-            builder.AddCustomDirective("require-trusted-types-for", "'script'");
         });
 
         if (!isDev)

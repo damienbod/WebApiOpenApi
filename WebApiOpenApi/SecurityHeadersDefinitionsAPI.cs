@@ -2,7 +2,7 @@
 
 public static class SecurityHeadersDefinitionsAPI
 {
-    public static HeaderPolicyCollection GetHeaderPolicyCollection()
+    public static HeaderPolicyCollection GetHeaderPolicyCollection(bool isDev)
     {
         var policy = new HeaderPolicyCollection()
             .AddFrameOptionsDeny()
@@ -18,14 +18,21 @@ public static class SecurityHeadersDefinitionsAPI
         {
             builder.AddObjectSrc().None();
             builder.AddBlockAllMixedContent();
-            builder.AddImgSrc().Self().From("data:");
-            builder.AddFormAction().Self();
-            builder.AddFontSrc().Self();
-            builder.AddStyleSrc().Self().UnsafeInline();
-            builder.AddScriptSrc().Self().UnsafeInline(); //.WithNonce();
+            builder.AddImgSrc().None();
+            builder.AddFormAction().None();
+            builder.AddFontSrc().None();
+            builder.AddStyleSrc().None();
+            builder.AddScriptSrc().None();
             builder.AddBaseUri().Self();
             builder.AddFrameAncestors().None();
+            builder.AddCustomDirective("require-trusted-types-for", "'script'");
         });
+
+        if (!isDev)
+        {
+            // maxage = one year in seconds
+            policy.AddStrictTransportSecurityMaxAgeIncludeSubDomains(maxAgeInSeconds: 60 * 60 * 24 * 365);
+        }
 
         return policy;
     }

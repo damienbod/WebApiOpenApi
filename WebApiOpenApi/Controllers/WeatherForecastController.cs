@@ -6,7 +6,7 @@ namespace WebApiOpenApi.Controllers;
 
 [Authorize(AuthenticationSchemes = "Bearer")]
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class WeatherForecastController(ILogger<WeatherForecastController> _logger) : ControllerBase
 {
     private static readonly string[] Summaries =

@@ -12,11 +12,29 @@ var builder = WebApplication.CreateBuilder(args);
 // Not recommended in production
 //var deploySwaggerUI = app.Environment.IsDevelopment();
 var deploySwaggerUI = builder.Configuration.GetValue<bool>("DeploySwaggerUI");
+var isDev = builder.Environment.IsDevelopment();
 
 builder.Services.AddSecurityHeaderPolicies()
     .SetPolicySelector((PolicySelectorContext ctx) =>
     {
-        return SecurityHeadersDefinitions.GetHeaderPolicyCollection(deploySwaggerUI);
+        if(deploySwaggerUI)
+        {
+            // Strict security headers
+            if (ctx.HttpContext.Request.Path.StartsWithSegments("/api") ||
+                ctx.HttpContext.Request.Path.StartsWithSegments("/openapi"))
+            {               
+                return SecurityHeadersDefinitionsAPI.GetHeaderPolicyCollection(isDev);
+            }
+
+            // Weakened security headers for Swagger UI
+            return SecurityHeadersDefinitionsSwagger.GetHeaderPolicyCollection(isDev);
+        }
+        else
+        {
+            // Strict security for production
+            return SecurityHeadersDefinitionsAPI.GetHeaderPolicyCollection(isDev);
+        }
+       
     });
 
 builder.Services.AddControllers();
@@ -57,6 +75,7 @@ app.UseSecurityHeaders();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
+
 app.MapControllers();
 
 //app.MapOpenApi(); // /openapi/v1.json
