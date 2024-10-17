@@ -17,7 +17,9 @@ var isDev = builder.Environment.IsDevelopment();
 builder.Services.AddSecurityHeaderPolicies()
     .SetPolicySelector((PolicySelectorContext ctx) =>
     {
-        if(deploySwaggerUI)
+        // sum is weak security headers due to Swagger UI deployment
+        // should only use in development
+        if (deploySwaggerUI) 
         {
             // Strict security headers
             if (ctx.HttpContext.Request.Path.StartsWithSegments("/api") ||
@@ -29,9 +31,9 @@ builder.Services.AddSecurityHeaderPolicies()
             // Weakened security headers for Swagger UI
             return SecurityHeadersDefinitionsSwagger.GetHeaderPolicyCollection(isDev);
         }
+        // Strict security headers for production
         else
         {
-            // Strict security for production
             return SecurityHeadersDefinitionsAPI.GetHeaderPolicyCollection(isDev);
         }
     });
