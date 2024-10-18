@@ -10,7 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Open up security restrictions to allow this to work
 // Not recommended in production
-//var deploySwaggerUI = app.Environment.IsDevelopment();
 var deploySwaggerUI = builder.Configuration.GetValue<bool>("DeploySwaggerUI");
 var isDev = builder.Environment.IsDevelopment();
 
@@ -21,15 +20,14 @@ builder.Services.AddSecurityHeaderPolicies()
         // should only use in development
         if (deploySwaggerUI) 
         {
-            // Strict security headers
-            if (ctx.HttpContext.Request.Path.StartsWithSegments("/api") ||
-                ctx.HttpContext.Request.Path.StartsWithSegments("/openapi"))
+            // Weakened security headers for Swagger UI
+            if (ctx.HttpContext.Request.Path.StartsWithSegments("/swagger"))
             {               
-                return SecurityHeadersDefinitionsAPI.GetHeaderPolicyCollection(isDev);
+                return SecurityHeadersDefinitionsSwagger.GetHeaderPolicyCollection(isDev);
             }
 
-            // Weakened security headers for Swagger UI
-            return SecurityHeadersDefinitionsSwagger.GetHeaderPolicyCollection(isDev);
+            // Strict security headers
+            return SecurityHeadersDefinitionsAPI.GetHeaderPolicyCollection(isDev);
         }
         // Strict security headers for production
         else
