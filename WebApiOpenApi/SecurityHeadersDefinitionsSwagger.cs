@@ -1,5 +1,8 @@
 ﻿namespace WebApiOpenApi;
 
+/// <summary>
+/// Weak security headers for Swagger UI
+/// </summary>
 public static class SecurityHeadersDefinitionsSwagger
 {
     private static HeaderPolicyCollection? policy;
