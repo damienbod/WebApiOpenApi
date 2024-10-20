@@ -2,9 +2,9 @@
 
 Blogs: 
 
-https://damienbod.com/2024/08/06/implementing-an-asp-net-core-api-with-net-9-and-openapi/
+[Implementing an ASP.NET Core API with .NET 9 and OpenAPI](https://damienbod.com/2024/08/06/implementing-an-asp-net-core-api-with-net-9-and-openapi/)
 
-https://damienbod.com/2024/08/12/add-a-swagger-ui-using-a-net-9-json-openapi-file/
+[Add a Swagger UI using a .NET 9 Json OpenAPI file](https://damienbod.com/2024/08/12/add-a-swagger-ui-using-a-net-9-json-openapi-file/)
 
 [Implement security headers for an API supporting OpenAPI Swagger UI](https://damienbod.com)
 
