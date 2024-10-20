@@ -2,9 +2,11 @@
 
 Blogs: 
 
-https://damienbod.com/2024/08/06/implementing-an-asp-net-core-api-with-net-9-and-openapi/
+[Implementing an ASP.NET Core API with .NET 9 and OpenAPI](https://damienbod.com/2024/08/06/implementing-an-asp-net-core-api-with-net-9-and-openapi/)
 
-https://damienbod.com/2024/08/12/add-a-swagger-ui-using-a-net-9-json-openapi-file/
+[Add a Swagger UI using a .NET 9 Json OpenAPI file](https://damienbod.com/2024/08/12/add-a-swagger-ui-using-a-net-9-json-openapi-file/)
+
+[Implement security headers for an API supporting OpenAPI Swagger UI](https://damienbod.com)
 
 ### Nuget package for OpenAPI
 
@@ -14,6 +16,8 @@ Install-Package Microsoft.AspNetCore.OpenApi -IncludePrerelease
 
 ## History
 
+- 2024-10-20 Improve security, API policy per default
+- 2024-10-17 Improve security headers
 - 2024-10-12 Updated to .NET 9 RC2
 - 2024-09-12 Updated to .NET 9 RC1
 - 2024-08-13 Updated to .NET 9 Preview 7
@@ -41,3 +45,5 @@ https://swagger.io/specification/
 https://github.com/martincostello/aspnetcore-openapi
 
 https://github.com/mikekistler/aspnet-openapi-examples
+
+https://andrewlock.net/major-updates-to-netescapades-aspnetcore-security-headers/
