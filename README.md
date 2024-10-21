@@ -6,7 +6,7 @@ Blogs:
 
 [Add a Swagger UI using a .NET 9 Json OpenAPI file](https://damienbod.com/2024/08/12/add-a-swagger-ui-using-a-net-9-json-openapi-file/)
 
-[Implement security headers for an API supporting OpenAPI Swagger UI](https://damienbod.com)
+[Implement security headers for an API supporting OpenAPI Swagger UI](https://damienbod.com/2024/10/21/implement-security-headers-for-an-api-supporting-openapi-swagger-ui/)
 
 ### Nuget package for OpenAPI
 
