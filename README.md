@@ -16,6 +16,7 @@ Install-Package Microsoft.AspNetCore.OpenApi -IncludePrerelease
 
 ## History
 
+- 2025-05-09 Updated packages
 - 2024-11-24 .NET 9
 - 2024-10-20 Improve security, API policy per default
 - 2024-10-17 Improve security headers
