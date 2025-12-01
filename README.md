@@ -1,5 +1,7 @@
 # ASP.NET Core API using OpenAPI
 
+[![.NET](https://github.com/damienbod/WebApiOpenApi/actions/workflows/dotnet.yml/badge.svg)](https://github.com/damienbod/WebApiOpenApi/actions/workflows/dotnet.yml)
+
 Blogs: 
 
 [Implementing an ASP.NET Core API with .NET 9 and OpenAPI](https://damienbod.com/2024/08/06/implementing-an-asp-net-core-api-with-net-9-and-openapi/)
