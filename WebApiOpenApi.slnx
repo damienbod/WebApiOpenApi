@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".github/workflows/dotnet.yml" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="WebApiOpenApi/WebApiOpenApi.csproj" />
+</Solution>
