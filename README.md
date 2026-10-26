@@ -18,6 +18,7 @@ Install-Package Microsoft.AspNetCore.OpenApi -IncludePrerelease
 
 ## History
 
+- 2026-10-26 Update packages
 - 2026-06-07 Update packages
 - 2025-12-01 .NET 10
 - 2025-08-01 Updated packages
